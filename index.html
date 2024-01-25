@@ -5,22 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="dist/output.css">
+    <link rel="stylesheet" href="node_modules/flowbite/dist/flowbite.css">
     <title>Document</title>
 </head>
 
 <body>
-    <section
-        class="bg-gray-900 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+    <section class="bg-gray-800 bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 z-10 relative">
             <h1
-                class="mb-4 text-3xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                Catatan Pelanggaran Siswa <br> SMP Dharma Wanita 09 Kromengan</h1>
-            <p class="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">Silahkan
-                mengisi catatan pelanggaran siswa pada form di bawah berikut
-            </p>
+                class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-100 md:text-5xl lg:text-6xl dark:text-white">
+                Catatan Pelanggaran Siswa
+                SMP Dharma Wanita 09 Kromengan</h1>
+            <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Silahkan mengisi catatan pelanggaran siswa pada form di bawah berikut.</p>
         </div>
-        <div
-            class="bg-gradient-to-b from-blue-50 to-transparent dark:from-cyan-800 w-full h-72 absolute top-0 left-0 z-0">
+        <div class="bg-gradient-to-b from-blue-900 to-transparent w-full h-72 absolute top-0 left-0 z-0">
         </div>
     </section>
     <section class="p-5">
@@ -113,6 +111,9 @@
                 .catch(error => console.error('Error!', error.message))
         })
     </script>
+    <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
+    <script src="node_modules/flowbite/dist/datepicker.js"></script>
+    <script src="node_modules/flowbite/dist/datepicker.min.js"></script>
 </body>
 
 </html>
