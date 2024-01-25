@@ -16,7 +16,8 @@
                 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-100 md:text-5xl lg:text-6xl dark:text-white">
                 Catatan Pelanggaran Siswa
                 SMP Dharma Wanita 09 Kromengan</h1>
-            <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Silahkan mengisi catatan pelanggaran siswa pada form di bawah berikut.</p>
+            <p class="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Silahkan mengisi catatan
+                pelanggaran siswa pada form di bawah berikut.</p>
         </div>
         <div class="bg-gradient-to-b from-blue-900 to-transparent w-full h-72 absolute top-0 left-0 z-0">
         </div>
@@ -51,7 +52,7 @@
                             d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                     </svg>
                 </div>
-                <input datepicker datepicker-title="Pilih Tanggal" type="date" id="tanggal" name="tanggal"
+                <input type="date" id="tanggal" name="tanggal"
                     class="bg-gray-100 border border-blue-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
                     placeholder="Pilih Tanggal" required>
             </div>
@@ -91,30 +92,8 @@
             </div>
         </form>
     </section>
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzm3x4iv5LzAyZhob3Z0lcfNHX4H1U3gJZ7njuoHbtlLPte3qleQpkV-KKZrbqWVJzr/exec'
-        const form = document.forms['Pelanggaran SMP DW'];
-        const btnKirim = document.querySelector('.btn-kirim');
-        const btnLoading = document.querySelector('.btn-loading');
-
-        form.addEventListener('submit', e => {
-            e.preventDefault()
-            btnLoading.classList.toggle('hidden');
-            btnKirim.classList.toggle('hidden');
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .then(response => {
-                    btnLoading.classList.toggle('hidden');
-                    btnKirim.classList.toggle('hidden');
-                    location.replace('sukses.html');
-                    console.log('Success!', response)
-                })
-                .catch(error => console.error('Error!', error.message))
-        })
-    </script>
     <script src="dist/js/app.js"></script>
     <script src="node_modules/flowbite/dist/flowbite.min.js"></script>
-    <script src="node_modules/flowbite/dist/datepicker.js"></script>
-    <script src="node_modules/flowbite/dist/datepicker.min.js"></script>
 </body>
 
 </html>
