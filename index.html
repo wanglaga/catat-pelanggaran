@@ -24,21 +24,22 @@
         </div>
     </section>
     <section class="p-5">
-        <form action="" class="mt-5 mx-auto max-w-lg">
+        <form name="Pelanggaran SMP DW" action="" class="mt-5 mx-auto max-w-lg">
             <div class="mx-5">
                 <label for="default-input" class="block mb-2 text-sm font-medium text-gray-800">Nama Siswa</label>
-                <input type="text" id="default-input"
+                <input type="text" name="nama" id="default-input"
                     class="bg-gray-100 border border-blue-700 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-700 block w-full p-2.5  dark:placeholder-gray-400"
-                    placeholder="Nama Siswa">
+                    placeholder="Nama Siswa" required>
             </div>
             <div class="mx-5 mt-3">
                 <label for="countries" class="block mb-2 text-sm font-medium text-gray-900">Kelas</label>
-                <select id="countries"
-                    class="bg-gray-100 border border-blue-700 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                <select name="kelas" id="countries"
+                    class="bg-gray-100 border border-blue-700 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                    required>
                     <option selected>Pilih Kelas</option>
-                    <option value="US">VII (7)</option>
-                    <option value="US">VIII (8)</option>
-                    <option value="US">IX (9)</option>
+                    <option value="7">VII (7)</option>
+                    <option value="8">VIII (8)</option>
+                    <option value="9">IX (9)</option>
                 </select>
             </div>
 
@@ -52,32 +53,32 @@
                             d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                     </svg>
                 </div>
-                <input datepicker datepicker-title="Pilih Tanggal" type="text"
+                <input datepicker datepicker-title="Pilih Tanggal" type="text" name="tanggal"
                     class="bg-gray-100 border border-blue-500 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5"
-                    placeholder="Pilih Tanggal">
+                    placeholder="Pilih Tanggal" required>
             </div>
             <div class="mx-5 mt-3">
                 <label for="countries" class="block mb-2 text-sm font-medium text-gray-900">Deskripsi
                     Pelanggaran</label>
-                <textarea id="message" rows="4"
+                <textarea name="deskripsi" id="message" rows="4"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-100 border-blue-500 rounded-lg border focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Tulis deskripsi pelanggaran disini..."></textarea>
+                    placeholder="Tulis deskripsi pelanggaran disini..." required></textarea>
             </div>
             <div class="mx-5 mt-3">
                 <label for="countries" class="block mb-2 text-sm font-medium text-gray-900">Tindak Lanjut Pelanggaran
                     <span class="text-red-600 text-xs">*Opsional</span></label>
-                <textarea id="message" rows="4"
+                <textarea name="tindakan" id="message" rows="4"
                     class="block p-2.5 w-full text-sm text-gray-900 bg-gray-100 border-blue-500 rounded-lg border focus:ring-blue-500 focus:border-blue-500"
-                    placeholder="Tulis tindakan lanjut pelanggaran disini..."></textarea>
+                    placeholder="Tulis tindakan lanjut pelanggaran disini..." required></textarea>
             </div>
             <div class="mx-5 mt-3">
                 <button type="submit"
-                    class="w-full text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-5 py-2.5 text-center me-2 mb-2">Kirim
+                    class="w-full text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-md text-sm px-5 py-2.5 text-center me-2 mb-2 btn-kirim">Kirim
                     Laporan</button>
             </div>
             <div class="mx-5 mt-3">
                 <button disabled type="submit"
-                    class="hidden w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 items-center">
+                    class="hidden w-full text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 items-center btn-loading">
                     <svg aria-hidden="true" role="status" class="inline w-4 h-4 me-3 text-white animate-spin"
                         viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -94,6 +95,26 @@
     </section>
     <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
     <script src="/node_modules/flowbite/dist/datepicker.min.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzm3x4iv5LzAyZhob3Z0lcfNHX4H1U3gJZ7njuoHbtlLPte3qleQpkV-KKZrbqWVJzr/exec'
+        const form = document.forms['Pelanggaran SMP DW'];
+        const btnKirim = document.querySelector('.btn-kirim');
+        const btnLoading = document.querySelector('.btn-loading');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            btnLoading.classList.toggle('hidden');
+            btnKirim.classList.toggle('hidden');
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(response => {
+                    btnLoading.classList.toggle('hidden');
+                    btnKirim.classList.toggle('hidden');
+                    location.replace('sukses.html');
+                    console.log('Success!', response)
+                })
+                .catch(error => console.error('Error!', error.message))
+        })
+    </script>
 </body>
 
 </html>
