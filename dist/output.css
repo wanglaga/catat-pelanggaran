@@ -1241,6 +1241,16 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.placeholder-slate-900::-moz-placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(15 23 42 / var(--tw-placeholder-opacity));
+}
+
+.placeholder-slate-900::placeholder {
+  --tw-placeholder-opacity: 1;
+  color: rgb(15 23 42 / var(--tw-placeholder-opacity));
+}
+
 .opacity-0 {
   opacity: 0;
 }
