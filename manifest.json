@@ -14,7 +14,7 @@
         },
         {
             "src": "dist/img/logo512.png",
-            "sizes": "512/512",
+            "sizes": "512X512",
             "type": "image/png"
         }
     ]
