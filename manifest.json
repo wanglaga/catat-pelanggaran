@@ -4,7 +4,7 @@
     "short_name": "Catatan Pelanggaran",
     "start_url": ".",
     "background_color": "#1e3a8a",
-    "theme_color": "#1e3a8a",
+    "theme_color": "#1d4ed8",
     "display": "standalone",
     "icons": [
         {
@@ -16,6 +16,12 @@
             "src": "dist/img/logo512.png",
             "sizes": "512X512",
             "type": "image/png"
+        },
+        {
+            "src": "dist/img/logo192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
         }
     ]
   }
